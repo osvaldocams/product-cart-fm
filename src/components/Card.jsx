@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Card = () => {
+const Card = ({product}) => {
     return (
         <div className="card">
             <div className="card-img-container">
                 <picture className="card-img-top">
-                    <source media="(min-width:739px )" srcSet="/src/assets/image-brownie-desktop.jpg" sizes="" />
-                    <img src="/src/assets/image-brownie-mobile.jpg" alt="" />
+                    <source media="(min-width:739px )" srcSet={product.desktop_image} sizes="" />
+                    <img src={product.mobile_image} alt={product.name} />
                 </picture>
                 <button
                     className="card-button"
@@ -14,9 +14,9 @@ const Card = () => {
                 </button>
             </div>
             <div className="card-body">
-                <p className="card-text">Waffle</p>
-                <h5 className="card-title">Waffle with Berries</h5>
-                <p className="card-price">$6.50</p>
+                <p className="card-text">{product.category} </p>
+                <h5 className="card-title">{product.name}</h5>
+                <p className="card-price">${product.price}</p>
             </div>
         </div>
     )
