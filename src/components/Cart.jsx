@@ -21,7 +21,10 @@ const Cart = () => {
                                     </div>
                                 </div>
                                 <div className="cart-item-right">
-                                    <img src="/src/assets/icon-remove-item.svg" alt="" />
+                                    <img 
+                                        src="/src/assets/icon-remove-item.svg" alt="" 
+                                        onClick={() => context.removeFromCart(item.id)}
+                                    />
                                 </div>
                             </div>
                         ))}

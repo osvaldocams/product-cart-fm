@@ -1,12 +1,15 @@
 import { createContext, useState } from "react";
 import { data } from "../data/data";
 
+
 export const ShoppingCartContext = createContext()
 export const ShoppingCartProvider = ({children}) =>{
 
     const [products, setProducts] = useState(data)
+
     const [cart, setCart] = useState([])
 
+    
     const addToCart = (item) => {
         const productExist = cart.findIndex(cartItem => cartItem.id === item.id)
         if(productExist >= 0){
@@ -18,12 +21,18 @@ export const ShoppingCartProvider = ({children}) =>{
         }
     }
 
+    const removeFromCart = (id) =>{
+        const updatedCart = cart.filter(item => item.id !== id)
+        setCart(updatedCart)
+    }
+
     return (
         <ShoppingCartContext.Provider value={{
             products,
             cart,
             setCart,
-            addToCart
+            addToCart,
+            removeFromCart
         }}>
             {children}
         </ShoppingCartContext.Provider>
