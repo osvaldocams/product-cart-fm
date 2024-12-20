@@ -5,10 +5,25 @@ export const ShoppingCartContext = createContext()
 export const ShoppingCartProvider = ({children}) =>{
 
     const [products, setProducts] = useState(data)
+    const [cart, setCart] = useState([])
+
+    const addToCart = (item) => {
+        const productExist = cart.findIndex(cartItem => cartItem.id === item.id)
+        if(productExist >= 0){
+            return item
+        }
+        else{
+            item.quantity = 1
+            setCart([...cart, item])
+        }
+    }
 
     return (
         <ShoppingCartContext.Provider value={{
-            products
+            products,
+            cart,
+            setCart,
+            addToCart
         }}>
             {children}
         </ShoppingCartContext.Provider>
