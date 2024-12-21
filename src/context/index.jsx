@@ -39,16 +39,28 @@ export const ShoppingCartProvider = ({children}) =>{
         })
         setCart(updatedCart)
     }
+    const decreaseQuantity = (id) => {
+        const updatedCart = cart.map(item => {
+            if(item.id === id && item.quantity > 1){
+                return {
+                    ...item,
+                    quantity:item.quantity - 1
+                }
+            }
+            return item
+        })
+        setCart(updatedCart)
+    }
 
     return (
         <ShoppingCartContext.Provider value={{
             products,
-            setProducts,
             cart,
             setCart,
             addToCart,
             removeFromCart,
-            increaseQuantity
+            increaseQuantity,
+            decreaseQuantity
         }}>
             {children}
         </ShoppingCartContext.Provider>

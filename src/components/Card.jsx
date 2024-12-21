@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { ShoppingCartContext } from "../context"
 
 const Card = ({product}) => {
@@ -7,7 +7,7 @@ const Card = ({product}) => {
     const renderQuantity = (id) => context.cart.map(item =>{
         if(item.id === id){
             return(
-                <span className="controls-quantity">{item.quantity} </span>
+                <span key={item.id} className="controls-quantity">{item.quantity} </span>
             )
         }
     })
@@ -19,7 +19,10 @@ const Card = ({product}) => {
                 <div 
                     className="controls"
                 >
-                    <button className="controls-button">
+                    <button 
+                        className="controls-button"
+                        onClick={() => context.decreaseQuantity(product.id)}
+                    >
                         <svg className="controls-button" xmlns="http://www.w3.org/2000/svg" width="0" height="0" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>
                     </button>
                     {renderQuantity(product.id)}
