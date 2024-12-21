@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { data } from "../data/data";
 
 
@@ -8,6 +8,7 @@ export const ShoppingCartProvider = ({children}) =>{
     const [products, setProducts] = useState(data)
 
     const [cart, setCart] = useState([])
+
 
     
     const addToCart = (item) => {
@@ -25,14 +26,29 @@ export const ShoppingCartProvider = ({children}) =>{
         const updatedCart = cart.filter(item => item.id !== id)
         setCart(updatedCart)
     }
+    
+    const increaseQuantity = (id) => {
+        const updatedCart = cart.map(item => {
+            if(item.id === id && item.quantity < 5){
+                return {
+                    ...item,
+                    quantity:item.quantity + 1
+                }
+            }
+            return item
+        })
+        setCart(updatedCart)
+    }
 
     return (
         <ShoppingCartContext.Provider value={{
             products,
+            setProducts,
             cart,
             setCart,
             addToCart,
-            removeFromCart
+            removeFromCart,
+            increaseQuantity
         }}>
             {children}
         </ShoppingCartContext.Provider>

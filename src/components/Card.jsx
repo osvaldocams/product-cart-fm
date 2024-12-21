@@ -1,16 +1,39 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { ShoppingCartContext } from "../context"
 
 const Card = ({product}) => {
     const context = useContext(ShoppingCartContext)
 
+    const renderQuantity = (id) => context.cart.map(item =>{
+        if(item.id === id){
+            return(
+                <span className="controls-quantity">{item.quantity} </span>
+            )
+        }
+    })
+
     const renderButton = (id) => {
         const isInCart = context.cart.filter(item => item.id === id).length
         if(isInCart){
             return (
-                <button>
-                        hello world {/*FIXME:*/}
-                </button>
+                <div 
+                    className="controls"
+                >
+                    <button className="controls-button">
+                        <svg className="controls-button" xmlns="http://www.w3.org/2000/svg" width="0" height="0" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>
+                    </button>
+                    {renderQuantity(product.id)}
+                    {/* {context.cart.map((item) => (        
+                        <span>{item.quantity} </span>
+                    ))} */}
+                    {/* <span className="controls-quantity">{1}</span> */}
+                    <button 
+                        className="controls-button"
+                        onClick={()=> context.increaseQuantity(product.id)}
+                    >
+                        <svg className="controls-button" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg>
+                    </button>
+                </div>
             )
         }else{
             return(
@@ -41,4 +64,9 @@ const Card = ({product}) => {
     )
 }
 
+
 export default Card
+
+// {context.cart.map(item => (        
+//     <span>{item.quantity}x</span>
+// ))}
