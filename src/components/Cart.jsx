@@ -3,6 +3,8 @@ import { ShoppingCartContext } from "../context"
 
 const Cart = () => {
     const context = useContext(ShoppingCartContext)
+
+    const getTotal = () => context.cart.reduce((total, item) => total + (item.quantity * item.price), 0)
     
     const renderCart = () => {
         if(context.cart.length > 0){
@@ -16,8 +18,8 @@ const Cart = () => {
                                     <h3 className="cart-item-title">{item.name}</h3>
                                     <div className="cart-item-info">
                                         <span>{item.quantity}x</span>
-                                        <span>@${item.price} </span> {/*FIXME:*/}
-                                        <span>${item.price}</span>
+                                        <span>@${item.price} </span>
+                                        <span>${item.price * item.quantity}</span>
                                     </div>
                                 </div>
                                 <div className="cart-item-right">
@@ -30,7 +32,7 @@ const Cart = () => {
                         ))}
                         <div className="cart-item-totals">
                             <p className="total-text">Order Total</p>
-                            <p className="total-number">$46.50</p>
+                            <p className="total-number">${getTotal()}</p>
                         </div>
                         <div className="carbon">
                             <img src="src/assets/icon-carbon-neutral.svg" alt="" />
