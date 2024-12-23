@@ -11,6 +11,7 @@ const Card = ({product}) => {
             )
         }
     })
+    const renderActiveStyles = (id) => context.cart.filter(item => item.id === id).length ? 'active' : null
 
     const renderButton = (id) => {
         const isInCart = context.cart.filter(item => item.id === id).length
@@ -25,11 +26,9 @@ const Card = ({product}) => {
                     >
                         <svg className="controls-button" xmlns="http://www.w3.org/2000/svg" width="0" height="0" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>
                     </button>
+
                     {renderQuantity(product.id)}
-                    {/* {context.cart.map((item) => (        
-                        <span>{item.quantity} </span>
-                    ))} */}
-                    {/* <span className="controls-quantity">{1}</span> */}
+
                     <button 
                         className="controls-button"
                         onClick={()=> context.increaseQuantity(product.id)}
@@ -54,7 +53,7 @@ const Card = ({product}) => {
             <div className="card-img-container">
                 <picture className="card-img-top">
                     <source media="(min-width:739px )" srcSet={product.desktop_image} sizes="" />
-                    <img src={product.mobile_image} alt={product.name} />
+                    <img className={`${renderActiveStyles(product.id)}`} src={product.mobile_image} alt={product.name} />
                 </picture>
                 {renderButton(product.id)}
             </div>
