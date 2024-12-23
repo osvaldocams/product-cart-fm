@@ -4,7 +4,7 @@ import { ShoppingCartContext } from "../context"
 const Cart = () => {
     const context = useContext(ShoppingCartContext)
 
-    const getTotal = () => context.cart.reduce((total, item) => total + (item.quantity * item.price), 0)
+    // const getTotal = () => context.cart.reduce((total, item) => total + (item.quantity * item.price), 0)
     
     const renderCart = () => {
         if(context.cart.length > 0){
@@ -32,13 +32,16 @@ const Cart = () => {
                         ))}
                         <div className="cart-item-totals">
                             <p className="total-text">Order Total</p>
-                            <p className="total-number">${getTotal()}</p>
+                            <p className="total-number">${context.getTotal()}</p>
                         </div>
                         <div className="carbon">
                             <img src="src/assets/icon-carbon-neutral.svg" alt="" />
                             <p>This is a <span>carbon neutral</span> delivery</p>
                         </div>
-                        <button className="cart-item-confirm">
+                        <button 
+                            className="cart-item-confirm"
+                            onClick={() => context.setModal(true)}
+                        >
                             Confirm Order
                         </button>
                     </div>

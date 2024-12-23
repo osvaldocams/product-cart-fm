@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { data } from "../data/data";
 
 
@@ -8,6 +8,8 @@ export const ShoppingCartProvider = ({children}) =>{
     const [products, setProducts] = useState(data)
 
     const [cart, setCart] = useState([])
+
+    const [modal, setModal] = useState(false)
 
 
     
@@ -56,6 +58,12 @@ export const ShoppingCartProvider = ({children}) =>{
         setCart(updatedCart);
     }
 
+    const reStartOrder = () => {
+        setCart([])
+    }
+
+    const getTotal = () => cart.reduce((total, item) => total + (item.quantity * item.price), 0)
+
     return (
         <ShoppingCartContext.Provider value={{
             products,
@@ -64,7 +72,11 @@ export const ShoppingCartProvider = ({children}) =>{
             addToCart,
             removeFromCart,
             increaseQuantity,
-            decreaseQuantity
+            decreaseQuantity,
+            getTotal,
+            modal,
+            setModal,
+            reStartOrder
         }}>
             {children}
         </ShoppingCartContext.Provider>
