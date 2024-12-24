@@ -1,8 +1,15 @@
-# React + Vite
+# Product list with cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta aplicación es un reto del sitio frontendmentor.io
+todas las imagenes colores e idea original fueron obtenidos del sitio mencionado
 
-Currently, two official plugins are available:
+## Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Estilos:** CSS vanilla
+* **Frontend:** Vite + React
+
+## Autor
+Osvaldo Camacho Sanchez
+
+## Deploy
+
