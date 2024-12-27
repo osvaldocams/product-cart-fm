@@ -42,7 +42,7 @@ const Card = ({product}) => {
                 <button
                         className="card-button"
                         onClick={()=>context.addToCart(product)}
-                    ><img src="/src/assets/icon-add-to-cart.svg" alt="" /> <span>Add to Cart</span>
+                    ><img src="./src/assets/icon-add-to-cart.svg" alt="" /> <span>Add to Cart</span>
                 </button>
             )
         }

@@ -24,7 +24,7 @@ const Cart = () => {
                                 </div>
                                 <div className="cart-item-right">
                                     <img 
-                                        src="/src/assets/icon-remove-item.svg" alt="" 
+                                        src="./src/assets/icon-remove-item.svg" alt="" 
                                         onClick={() => context.removeFromCart(item.id)}
                                     />
                                 </div>
@@ -35,7 +35,7 @@ const Cart = () => {
                             <p className="total-number">${context.getTotal()}</p>
                         </div>
                         <div className="carbon">
-                            <img src="src/assets/icon-carbon-neutral.svg" alt="" />
+                            <img src="./src/assets/icon-carbon-neutral.svg" alt="" />
                             <p>This is a <span>carbon neutral</span> delivery</p>
                         </div>
                         <button 
@@ -52,7 +52,7 @@ const Cart = () => {
                 <div className='cart'>
                     <h3 className="cart-title">Your Cart (0)</h3>
                     <div className="cart-empty">
-                        <img src="/src/assets/illustration-empty-cart.svg" alt="" />
+                        <img src="./src/assets/illustration-empty-cart.svg" alt="" />
                         <p>Your added items will appear here</p>
                     </div>
                 </div>
