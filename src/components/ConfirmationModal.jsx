@@ -6,7 +6,7 @@ const ConfirmationModal = () => {
     return (
         <div className="modal">
             <div className="modal-content">
-                <img className='modal-icon' src="./src/assets/icon-order-confirmed.svg" alt="" />
+                <img className='modal-icon' src="/img/icon-order-confirmed.svg" alt="" />
                 <h3 className='modal-title'>Order Confirmed</h3>
                 <p className='modal-text'>we hope you enjoy your food!</p>
                 <div className='modal-order_resume'>

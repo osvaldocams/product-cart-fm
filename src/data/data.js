@@ -2,8 +2,8 @@ export const data = [
     
     {
         
-        desktop_image : "./src/assets/image-waffle-desktop.jpg", 
-        mobile_image : "./src/assets/image-waffle-mobile.jpg", 
+        desktop_image : "/img/image-waffle-desktop.jpg", 
+        mobile_image : "/img/image-waffle-mobile.jpg", 
         id : 1,
         name: "Waffle with Berries",
         category: "Waffle",
@@ -11,8 +11,8 @@ export const data = [
         quantity: 0
     },
     {
-        desktop_image : "./src/assets/image-creme-brulee-desktop.jpg", 
-        mobile_image : "./src/assets/image-creme-brulee-mobile.jpg", 
+        desktop_image : "/img/image-creme-brulee-desktop.jpg", 
+        mobile_image : "/img/image-creme-brulee-mobile.jpg", 
         id : 2,
         name: "Vanilla Bean Crème Brûlée",
         category: "Crème Brûlée",
@@ -20,8 +20,8 @@ export const data = [
         quantity: 0
     },
     {
-        desktop_image : "./src/assets/image-macaron-desktop.jpg", 
-        mobile_image : "./src/assets/image-macaron-mobile.jpg", 
+        desktop_image : "/img/image-macaron-desktop.jpg", 
+        mobile_image : "/img/image-macaron-mobile.jpg", 
         id : 3,
         name: "Macaron Mix of Five",
         category: "Macaron",
@@ -29,8 +29,8 @@ export const data = [
         quantity: 0
     },
     {
-        desktop_image : "./src/assets/image-tiramisu-desktop.jpg", 
-        mobile_image : "./src/assets/image-tiramisu-mobile.jpg", 
+        desktop_image : "/img/image-tiramisu-desktop.jpg", 
+        mobile_image : "/img/image-tiramisu-mobile.jpg", 
         id : 4,
         name: "Classic Tiramisu",
         category: "Tiramisu",
@@ -38,8 +38,8 @@ export const data = [
         quantity: 0
     },
     {
-        desktop_image : "./src/assets/image-baklava-desktop.jpg", 
-        mobile_image : "./src/assets/image-baklava-mobile.jpg", 
+        desktop_image : "/img/image-baklava-desktop.jpg", 
+        mobile_image : "/img/image-baklava-mobile.jpg", 
         id : 5,
         name: "Pistachio Baklava",
         category: "Baklava",
@@ -47,8 +47,8 @@ export const data = [
         quantity: 0
     },
     {
-        desktop_image : "./src/assets/image-meringue-desktop.jpg", 
-        mobile_image : "./src/assets/image-meringue-mobile.jpg", 
+        desktop_image : "/img/image-meringue-desktop.jpg", 
+        mobile_image : "/img/image-meringue-mobile.jpg", 
         id : 6,
         name: "Lemon Meringue Pie",
         category: "Pie",
@@ -56,8 +56,8 @@ export const data = [
         quantity: 0
     },
     {
-        desktop_image : "./src/assets/image-cake-desktop.jpg", 
-        mobile_image : "./src/assets/image-cake-mobile.jpg", 
+        desktop_image : "/img/image-cake-desktop.jpg", 
+        mobile_image : "/img/image-cake-mobile.jpg", 
         id : 7,
         name: "Red Velvet Cake",
         category: "Cake",
@@ -65,8 +65,8 @@ export const data = [
         quantity: 0
     },
     {
-        desktop_image : "./src/assets/image-brownie-desktop.jpg", 
-        mobile_image : "./src/assets/image-brownie-mobile.jpg", 
+        desktop_image : "/img/image-brownie-desktop.jpg", 
+        mobile_image : "/img/image-brownie-mobile.jpg", 
         id : 8,
         name: "Salted Caramel Brownie",
         category: "Brownie",
@@ -74,8 +74,8 @@ export const data = [
         quantity: 0
     },
     {
-        desktop_image : "./src/assets/image-panna-cotta-desktop.jpg", 
-        mobile_image : "./src/assets/image-panna-cotta-mobile.jpg", 
+        desktop_image : "/img/image-panna-cotta-desktop.jpg", 
+        mobile_image : "/img/image-panna-cotta-mobile.jpg", 
         id : 9,
         name: "Vanilla Panna Cotta",
         category: "Panna Cotta",
